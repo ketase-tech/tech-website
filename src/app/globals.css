@@ -20,7 +20,7 @@
   }
 
   .main-paragraph {
-    @apply text-lg sm:text-xl md:text-2xl text-center max-w-3xl text-gray-700 dark:text-gray-300;
+    @apply text-lg sm:text-xl md:text-2xl text-center max-w-3xl text-gray-700;
   }
 
   .btn-primary{

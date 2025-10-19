@@ -73,14 +73,16 @@ export const Hero = () => {
               animate="visible"
               className="text-center w-full max-w-[668px] mx-auto"
             >
-              <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              <div className="my-4 px-12  sm:flex sm:justify-center">
+                <motion.div 
+                variants={textVariants}
+                className="relative rounded-full w-auto md:px-8 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                   A KETASE Group Subsidiary.{' '}
                   <a href="#" className="font-semibold text-primary">
                     <span aria-hidden="true" className="absolute inset-0" />
                     Read more <span aria-hidden="true">&rarr;</span>
                   </a>
-                </div>
+                </motion.div>
               </div>
               <motion.h1
                 variants={textVariants}
