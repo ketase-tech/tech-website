@@ -188,6 +188,21 @@ export default function Services() {
                             </motion.span>
                         ))}
                     </div>
+                    <motion.div
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="mt-6 relative w-full h-48 md:h-64 rounded-xl overflow-hidden"
+                    >
+                        <Image
+                            src="/icons/cloud services.png"
+                            alt="Cloud services"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                    </motion.div>
                 </motion.div>
 
                 {/* Business Systems & Technology Integration */}
