@@ -1,0 +1,140 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-color: #DB1B5C;
+}
+
+@layer components {
+  .container-default {
+    @apply w-full max-w-[1440px] px-4 sm:px-8 md:px-6 lg:px-8 mx-auto;
+  }
+
+  .section-title {
+    @apply text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight text-center;
+  }
+
+  .main-paragraph {
+    @apply text-lg sm:text-xl md:text-2xl text-center max-w-3xl text-gray-700 dark:text-gray-300;
+  }
+
+  .btn-primary{
+    @apply bg-[#DB1B5C] text-white font-medium py-3 px-6 rounded-full hover:bg-[#C2184F] transition-colors duration-200;
+  }
+
+
+}
+
+/* Hero background and overlay */
+.hero-background {
+  /* Use external SVG as requested (kept a subtle dark layer via overlay element) */
+  background-image: url('https://framerusercontent.com/images/zpiNUSqo3hiX9uNzSatCsh1nefA.svg?width=1510&height=626');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.35); /* semi-transparent dark overlay for contrast */
+}
+
+
+
+@theme inline {
+  --color-background: var(--background) !important;
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+
+@font-face {
+  font-family: 'InterDisplay';
+  src: url('/fonts/inter/InterDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterDisplaySemiBold';
+  src: url('/fonts/inter/InterDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterDisplay';
+  src: url('/fonts/inter/InterDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'InterDisplay', sans-serif;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'InterDisplaySemiBold', sans-serif;
+  letter-spacing: -.04em;
+}
+
+p {
+  font-family: 'InterDisplay', sans-serif;
+  letter-spacing: 0em;
+  margin-bottom: 1.5em;
+  font-size: 18px;
+}
+
+/* ANIMATIONS */
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-right {
+  animation: scroll-right linear infinite;
+  will-change: transform;
+}
+
+/* Smooth pause on hover */
+.group:hover .animate-scroll-left,
+.group:hover .animate-scroll-right {
+  animation-play-state: paused;
+}
