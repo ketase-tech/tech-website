@@ -8,7 +8,7 @@ const images = [
   '/project-images/inno-page.png',
   '/project-images/koakh-fit-website.png',
   '/project-images/jicogo.png',
-  '/gallery/img-1.jpeg',
+  '/project-images/ekhaya.png',
 ];
 
 const TickerRow = ({

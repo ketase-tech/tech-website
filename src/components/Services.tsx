@@ -50,10 +50,10 @@ export default function Services() {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.3 }}
-                        className="relative w-full h-48 md:h-72"
+                        className="relative w-full h-48 md:h-80"
                     >
                         <Image
-                            src={""}
+                            src={"/project-images/cover-img.png"}
                             alt="Web app mockup"
                             fill
                             className="object-contain object-center"
@@ -153,7 +153,7 @@ export default function Services() {
                     </div>
                 </motion.div>
 
-                {/* No-Code Websites */}
+                {/* Digital Transformation */}
                 <motion.div
                     variants={fadeInUp}
                     initial="hidden"
@@ -161,20 +161,21 @@ export default function Services() {
                     viewport={{ once: true, amount: 0.3 }}
                     className="bg-white rounded-3xl shadow-sm p-6 md:p-8"
                 >
-                    <h3 className="text-lg md:text-xl font-semibold mb-3">No-code websites</h3>
+                    <h3 className="text-lg md:text-xl font-semibold mb-3">Digital Transformation</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed text-base md:text-lg">
-                        Launch faster with powerful, fully customizable websites built with Webflow and Framer
-                        that are easy to manage and optimized for conversion.
+                        We help businesses reimagine their operations through innovative technology solutions.
+                        From legacy system modernization to cloud migration and automation, we transform traditional
+                        processes into streamlined, digital-first experiences that drive growth and efficiency.
                     </p>
                     <div className="flex flex-wrap gap-3">
                         {[
-                            'Design',
-                            'User Research',
-                            'Branding',
-                            'Development',
-                            'UI/UX Design',
-                            'Copywriting & Storytelling',
-                            'SEO Optimization',
+                            'Legacy Modernization',
+                            'Cloud Migration',
+                            'Process Automation',
+                            'Data Analytics',
+                            'System Integration',
+                            'Digital Strategy',
+                            'Change Management',
                         ].map((tag) => (
                             <motion.span
                                 key={tag}
@@ -195,13 +196,7 @@ export default function Services() {
                         viewport={{ once: true, amount: 0.3 }}
                         className="mt-6 relative w-full h-48 md:h-64 rounded-xl overflow-hidden"
                     >
-                        <Image
-                            src="/icons/cloud services.png"
-                            alt="Cloud services"
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                        />
+
                     </motion.div>
                 </motion.div>
 
@@ -241,28 +236,19 @@ export default function Services() {
                                     initial="hidden"
                                     whileInView="show"
                                     viewport={{ once: true, amount: 0.3 }}
-                                    className={`flex items-center justify-between ${idx < 3 ? 'text-gray-900 font-medium' : 'text-gray-400'
+                                    className={`flex items-center justify-between ${idx < 3 ? 'text-gray-900 font-medium' : 'text-gray-900'
                                         }`}
                                 >
                                     {step}
                                     {idx < 3 ? (
-                                        <span className="w-2.5 h-2.5 bg-red-500 rounded-full" />
+                                        <span className="w-2.5 h-2.5 bg-primary rounded-full" />
                                     ) : (
-                                        <span className="w-2.5 h-2.5 border border-gray-300 rounded-full" />
+                                        <span className="w-2.5 h-2.5 bg-primary rounded-full" />
                                     )}
                                 </motion.li>
                             ))}
                         </ul>
                     </motion.div>
-                    <motion.button
-                        variants={fadeInUp}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, amount: 0.3 }}
-                        className="mt-6 text-sm font-medium border border-gray-300 rounded-full px-5 py-2 hover:bg-gray-100 transition"
-                    >
-                        Book a call
-                    </motion.button>
                 </motion.div>
 
                 {/* Dark Card */}
@@ -275,11 +261,14 @@ export default function Services() {
                 >
                     <div>
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-snug">
-                            World-class Design, <br /> Data-Driven Marketing, <br />
-                            <span className="text-gray-400">Unstoppable Growth</span>
+                            Cutting-Edge Technology, <br /> Innovative Solutions, <br />
+                            <span className="text-gray-400">Digital Excellence</span>
                         </h2>
                     </div>
-                    <motion.button
+                    <motion.a
+                        href="https://calendly.com/ketasegroup"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         variants={fadeInUp}
                         initial="hidden"
                         whileInView="show"
@@ -287,7 +276,7 @@ export default function Services() {
                         className="self-start mt-6 text-sm font-medium border border-gray-600 rounded-full px-5 py-2 hover:bg-gray-800 transition"
                     >
                         Book a call
-                    </motion.button>
+                    </motion.a>
                 </motion.div>
             </div>
         </section>

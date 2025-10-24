@@ -78,7 +78,7 @@ export const Hero = () => {
                 variants={textVariants}
                 className="relative rounded-full w-auto md:px-8 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                   A KETASE Group Subsidiary.{' '}
-                  <a href="#" className="font-semibold text-primary">
+                  <a href="https://ketasegroup.com/about" className="font-semibold text-primary">
                     <span aria-hidden="true" className="absolute inset-0" />
                     Read more <span aria-hidden="true">&rarr;</span>
                   </a>
