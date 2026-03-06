@@ -17,7 +17,7 @@ export default function Navbar() {
   const menuItems = [
     { label: 'Home', href: '/', external: false },
     { label: 'Solutions', href: '/solutions', external: false },
-    { label: 'Projects', href: 'https://www.ketasegroup.com/tech', external: true },
+    { label: 'Projects', href: 'https://www.ketasegroup.com/projects', external: true },
     { label: 'About', href: '/about', external: false },
   ];
 
