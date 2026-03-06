@@ -107,7 +107,7 @@ export default function Navbar() {
           >
             <motion.a
               whileHover={{ scale: 1.05 }}
-              href="#"
+              href="mailto:tech@ketasegroup.com"
               className="px-4 py-2 bg-black text-white rounded-full text-sm font-medium"
             >
               Contact Us
