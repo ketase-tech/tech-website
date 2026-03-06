@@ -14,7 +14,12 @@ export default function Navbar() {
     setScrolled(latest > 50);
   });
 
-  const menuItems = ['Home', 'Solutions', 'Projects', 'About'];
+  const menuItems = [
+    { label: 'Home', href: '/', external: false },
+    { label: 'Solutions', href: '/solutions', external: false },
+    { label: 'Projects', href: 'https://www.ketasegroup.com/tech', external: true },
+    { label: 'About', href: '/about', external: false },
+  ];
 
   return (
     <>
@@ -83,17 +88,28 @@ export default function Navbar() {
           >
             {menuItems.map((item, idx) => (
               <motion.div
-                key={item}
+                key={item.label}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + idx * 0.07, duration: 0.4, ease: 'easeOut' }}
               >
-                <Link
-                  href={`/${item.toLowerCase()}`}
-                  className="text-gray-800 hover:text-black transition-colors font-medium text-sm"
-                >
-                  {item}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-800 hover:text-black transition-colors font-medium text-sm"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="text-gray-800 hover:text-black transition-colors font-medium text-sm"
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </motion.div>
             ))}
           </motion.div>
@@ -129,25 +145,11 @@ export default function Navbar() {
                 transition={{ duration: 0.3 }}
               >
                 {mobileMenuOpen ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                   </svg>
                 )}
@@ -183,21 +185,33 @@ export default function Navbar() {
                 <div className="p-6 space-y-1">
                   {menuItems.map((item, idx) => (
                     <motion.div
-                      key={item}
+                      key={item.label}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05, duration: 0.3 }}
                     >
-                      <Link
-                        href={`/${item.toLowerCase()}`}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block px-4 py-3 text-gray-800 hover:bg-gray-50 rounded-lg transition-colors font-medium"
-                      >
-                        {item}
-                      </Link>
+                      {item.external ? (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block px-4 py-3 text-gray-800 hover:bg-gray-50 rounded-lg transition-colors font-medium"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block px-4 py-3 text-gray-800 hover:bg-gray-50 rounded-lg transition-colors font-medium"
+                        >
+                          {item.label}
+                        </Link>
+                      )}
                     </motion.div>
                   ))}
-                  
+
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -205,7 +219,7 @@ export default function Navbar() {
                     className="pt-4 border-t border-gray-100"
                   >
                     <a
-                      href="#"
+                      href="mailto:tech@ketasegroup.com"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block w-full px-4 py-3 bg-black text-white text-center rounded-lg font-medium hover:bg-gray-900 transition-colors"
                     >
